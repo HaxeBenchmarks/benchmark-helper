@@ -4,7 +4,7 @@ import haxe.macro.Expr;
 
 class HaxeVersionsMacro {
 	#if macro
-	static function mapOutput2Target():String {
+	public static function mapOutput2Target():String {
 		var output = Compiler.getOutput();
 
 		if (~/\.n$/.match(output)) {
