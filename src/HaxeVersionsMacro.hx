@@ -1,4 +1,3 @@
-package macro;
 
 import haxe.macro.Compiler;
 import haxe.macro.Expr;
