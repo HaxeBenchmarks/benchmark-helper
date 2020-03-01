@@ -1,0 +1,24 @@
+{
+    "name": "benchmark-helper",
+    "version": "1.0.0",
+    "description": "Haxe benchmark based on haxe-formatter",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HaxeBenchmarks/benchmark-helper.git"
+    },
+    "keywords": [
+        "benchmark",
+        "haxe"
+    ],
+    "author": {
+        "name": "Alexander Blum",
+        "email": "Alexander.Blum@gmail.com"
+    },
+    "bugs": {
+        "url": "https://github.com/HaxeBenchmarks/benchmark-helper/issues"
+    },
+    "devDependencies": {
+        "lix": "^15.8.5"
+    },
+    "homepage": "https://github.com/HaxeBenchmarks/benchmark-helper#readme"
+}
