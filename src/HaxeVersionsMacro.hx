@@ -23,7 +23,7 @@ class HaxeVersionsMacro {
 			return "Hashlink/C";
 		}
 		if (~/cppGCGen$/.match(output)) {
-			return "C++ (HXCPP_GC_GENERATIONAL)";
+			return "C++ (GC Gen)";
 		}
 		if (~/cpp$/.match(output)) {
 			return "C++";
