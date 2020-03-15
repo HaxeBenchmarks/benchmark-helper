@@ -22,6 +22,9 @@ class HaxeVersionsMacro {
 		if (~/\.c$/.match(output)) {
 			return "Hashlink/C";
 		}
+		if (~/cppGCGen$/.match(output)) {
+			return "C++ (HXCPP_GC_GENERATIONAL)";
+		}
 		if (~/cpp$/.match(output)) {
 			return "C++";
 		}
