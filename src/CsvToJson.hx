@@ -55,7 +55,51 @@ class CsvToJson {
 			});
 		}
 
-		return testRun;
+		return combineMultipleResults(testRun);
+	}
+
+	static function combineMultipleResults(testRun:TestRun):TestRun {
+		var combinedResults:TestRun = {
+			haxeVersion: testRun.haxeVersion,
+			date: testRun.date,
+			targets: []
+		}
+
+		var seenNames:Array<String> = [];
+		for (target in testRun.targets) {
+			if (seenNames.indexOf(target.name) >= 0) {
+				continue;
+			}
+			combinedResults.targets.push(buildTargetAverage(testRun, target.name));
+			seenNames.push(target.name);
+		}
+		return combinedResults;
+	}
+
+	static function buildTargetAverage(testRun:TestRun, name:String):TargetResult {
+		var values:Array<Float> = [];
+		var result:TargetResult = {
+			name: name,
+			inputLines: 0,
+			outputLines: 0,
+			time: 0
+		};
+
+		var totalTime:Float = 0;
+		var count:Int = 0;
+		for (target in testRun.targets) {
+			if (target.name != name) {
+				continue;
+			}
+			totalTime += target.time;
+			count++;
+		}
+		if (count == 1) {
+			result.time = totalTime;
+		} else {
+			result.time = totalTime / count;
+		}
+		return result;
 	}
 
 	static function getHaxeVersion():String {
