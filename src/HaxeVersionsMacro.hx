@@ -1,4 +1,3 @@
-
 import haxe.macro.Compiler;
 import haxe.macro.Expr;
 
@@ -28,6 +27,9 @@ class HaxeVersionsMacro {
 		if (~/cpp$/.match(output)) {
 			return "C++";
 		}
+		if (~/cppia$/.match(output)) {
+			return "Cppia";
+		}
 		if (~/cs$/.match(output)) {
 			return "C#";
 		}
@@ -42,6 +44,9 @@ class HaxeVersionsMacro {
 		}
 		if (~/\.py$/.match(output)) {
 			return "Python";
+		}
+		if (~/\.lua$/.match(output)) {
+			return "Lua";
 		}
 		return "eval";
 	}
