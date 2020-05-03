@@ -10,10 +10,8 @@ typedef TestRun = {
 
 typedef TargetResult = {
 	var name:String;
-	@:optional var inputLines:Int;
-	@:optional var outputLines:Int;
-	var time:TimeValue;
-	@:optional var compileTime:TimeValue;
+	var time:Float;
+	var compileTime:Null<Float>;
 }
 
 enum DatasetType {
@@ -34,4 +32,19 @@ abstract TimeValue(Float) to Float {
 		}
 		return new TimeValue(Math.round(value * 1000) / 1000);
 	}
+}
+
+typedef ArchivedResultsV1 = Array<TestRunV1>;
+
+typedef TestRunV1 = {
+	var haxeVersion:String;
+	var date:String;
+	var targets:Array<TargetResultV1>;
+}
+
+typedef TargetResultV1 = {
+	var name:String;
+	var inputLines:Int;
+	var outputLines:Int;
+	var time:Float;
 }

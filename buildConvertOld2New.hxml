@@ -1,0 +1,7 @@
+-cp src
+
+-lib json2object
+
+-hl bin/ConvertOld2New.hl
+
+-main ConvertOld2New
