@@ -10,9 +10,10 @@ typedef TestRun = {
 
 typedef TargetResult = {
 	var name:String;
-	var inputLines:Int;
-	var outputLines:Int;
+	@:optional var inputLines:Int;
+	@:optional var outputLines:Int;
 	var time:TimeValue;
+	@:optional var compileTime:TimeValue;
 }
 
 enum DatasetType {
