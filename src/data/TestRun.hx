@@ -12,6 +12,7 @@ typedef TargetResult = {
 	var name:String;
 	var time:Float;
 	var compileTime:Null<Float>;
+	@:optional var status:ResultStatus;
 }
 
 enum DatasetType {
@@ -32,6 +33,13 @@ abstract TimeValue(Float) to Float {
 		}
 		return new TimeValue(Math.round(value * 1000) / 1000);
 	}
+}
+
+enum abstract ResultStatus(Int) {
+	var Success = 0;
+	var CompileFailed = 1;
+	var RunFailed = 2;
+	var VerifyFailed = 3;
 }
 
 typedef ArchivedResultsV1 = Array<TestRunV1>;
