@@ -4,6 +4,7 @@ typedef ArchivedResults = Array<TestRun>;
 
 typedef TestRun = {
 	var haxeVersion:String;
+	@:optional var toolVersions:Map<Tool, String>;
 	var date:String;
 	var targets:Array<TargetResult>;
 }
@@ -19,6 +20,21 @@ enum DatasetType {
 	Haxe3;
 	Haxe4;
 	HaxeNightly;
+}
+
+enum abstract Tool(String) {
+	var Hxcpp = "hxccp";
+	var Php = "php";
+	var Mono = "mono";
+	var Python = "python";
+	var Lua = "lua";
+	var LuaJit = "luajit";
+	var Hl = "hl";
+	var NodeJs = "nodejs";
+	var Java = "java";
+	var HxNodeJs = "hxnodejs";
+	var HxCs = "hxcs";
+	var HxJava = "hxjava";
 }
 
 abstract TimeValue(Float) to Float {
