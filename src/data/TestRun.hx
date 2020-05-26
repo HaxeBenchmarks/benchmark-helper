@@ -35,6 +35,7 @@ enum abstract Tool(String) {
 	var HxNodeJs = "hxnodejs";
 	var HxCs = "hxcs";
 	var HxJava = "hxjava";
+	var HaxePR = "HaxePR";
 }
 
 abstract TimeValue(Float) to Float {
