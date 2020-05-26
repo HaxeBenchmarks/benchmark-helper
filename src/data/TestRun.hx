@@ -20,6 +20,7 @@ enum DatasetType {
 	Haxe3;
 	Haxe4;
 	HaxeNightly;
+	HaxePR;
 }
 
 enum abstract Tool(String) {
